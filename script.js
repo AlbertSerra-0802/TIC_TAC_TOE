@@ -1,42 +1,33 @@
 let btnRef = document.querySelectorAll(".button-option");
-let popupRef = document.querySelector(".popup");
-let newgameBtn = document.getElementaryByld("new-game");
-let restartBtn = document.getElementById("restar");
-let magRef = document.getElementById("message");
+let newgameBtn = document.getElementById("new-game");
+let restartBtn = document.getElementById("restart");
+let msgRef = document.getElementById("message");
 
-//Winning Pattern Array
-let winningPattern = [
-    [0, 1, 2], 
-    [0, 3, 6], 
-    [2, 5, 8], 
-    [6, 7, 8], 
-    [3, 4, 5], 
-    [1, 4, 7],
-    [0, 4, 8],
-    [2, 4, 6],
-]; 
 
-//The Player press 'X' plays first :14:28
+//The Player press 'X' plays first
 let xTurn = true;
 let count = 0;
 
 
-//Display X/O on click
+//Display X/O on click 17:04
 btnRef.forEach((element) => {
-    element.addeventListener("click", () => {
+    element.addEventListener("click", () => {
         if (xTurn) {
-           xTurn=false;
-           
-        //Display "X"
-        element.innerText = "X";
-        element.disabled = "true";
-    } else {
-        xTurn = "true";
-        
-        //Dsipaly Y
-        element.innerText = "0";
-        element.disabled = true;
+            element.innerText = "X";
+        } else { 
+            element.innerText = "O";
         }
+        element.disabled = true;   // Desactivar el botó
+        xTurn = !xTurn;            // Alterna el torn
+    
+        //Increment count on each click
+        count += 1;
+        if(count === 9){
+            //It's a draw since there are a total of 9 boxed
+
+        }
+        //Check for win on every click
+        winChecker();
     });
 });
  
