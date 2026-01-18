@@ -17,4 +17,9 @@ let winningPattern = [
 ]; 
 
 //The Player press 'X' plays first :14:28
-let
+let xTurn = true;
+let count = 0;
+
+
+//Display X/O on click
+btnRef.forEach((element))
