@@ -7,7 +7,7 @@ font-family:"Raleway", sans-serif;
 
 body {
 height: 100vh;
-background: linear-gradient(135deg,#8052,#d161ff);
+background: linear-gradient(135deg,rgba(27, 220, 234, 0.133),#339fca);
 
 }
 
@@ -39,4 +39,5 @@ html{
 #restart{
     font-size: 1.3em;
     margin-top: 1.5em;
+    padding: 1em 0;
 }
