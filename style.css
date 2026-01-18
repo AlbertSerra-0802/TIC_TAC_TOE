@@ -38,6 +38,10 @@ html{
 
 #restart{
     font-size: 1.3em;
+    color: azure;
     margin-top: 1.5em;
-    padding: 1em 0;
+    padding: 1em;
+    border-radius: 8px;
+    border: none;
+    background-color: #bc822c;
 }
