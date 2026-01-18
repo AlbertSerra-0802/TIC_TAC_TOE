@@ -67,6 +67,10 @@ html{
     color: #ffffff;
 }
 
+.popup.hide{
+display: none;
+}
+
 #new-game{
     font-size: 0.6em;
     padding: 0.5em 1em;
@@ -77,5 +81,7 @@ html{
 }
 
 #message{
-
+color:azure;
+text-align: center;
+font-size: 1em;
 }
