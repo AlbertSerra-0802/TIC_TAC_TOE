@@ -22,6 +22,7 @@ html{
 }
 
 .container{
+    margin-bottom: 3px;
     width: 70vmin;
     height: 70vmin;
     display: flex;
@@ -52,5 +53,29 @@ html{
 }
 
 .popup{
-    
+    background: linear-gradient(135deg,rgba(27, 220, 234, 0.133),#339fca);
+    height: 85%;
+    width: 85%;
+    position: absolute;
+    display: flex;
+    z-index: 2;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1em;
+    font-size: 12vmin;
+    color: #ffffff;
+}
+
+#new-game{
+    font-size: 0.6em;
+    padding: 0.5em 1em;
+    background-color: orange;
+    color: #ffffff;
+    border-radius: 0.2em;
+    border:none;
+}
+
+#message{
+
 }
