@@ -33,15 +33,20 @@ html{
     background: #ffffff;
     height: 22vmin;
     width: 22vmin;
-    border-radius: 8px;
+    border-radius: 10px;
+    font-size: 12vmin;
+    color:red;
+    box-shadow: 0;
 }
 
 #restart{
     font-size: 1.3em;
     color: azure;
-    margin-top: 1.5em;
     padding: 1em;
     border-radius: 8px;
-    border: none;
-    background-color: #bc822c;
+    border:none;
+    background-color: #2cbc52;
+    position: relative;
+    margin: 1.5em auto 0 auto;
+    display: block; 
 }
