@@ -22,4 +22,21 @@ let count = 0;
 
 
 //Display X/O on click
-btnRef.forEach((element))
+btnRef.forEach((element) => {
+    element.addeventListener("click", () => {
+        if (xTurn) {
+           xTurn=false;
+           
+        //Display "X"
+        element.innerText = "X";
+        element.disabled = "true";
+    } else {
+        xTurn = "true";
+        
+        //Dsipaly Y
+        element.innerText = "0";
+        element.disabled = true;
+        }
+    });
+});
+ 
