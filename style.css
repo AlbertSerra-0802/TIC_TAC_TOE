@@ -7,8 +7,7 @@ font-family:"Raleway", sans-serif;
 
 body {
 height: 100vh;
-background: linear-gradient(135deg,rgba(27, 220, 234, 0.133),#339fca);
-
+background: #05ed0d;
 }
 
 html{

@@ -23,8 +23,18 @@ const disableButtons = () => {
 
     //enable popup
     popupRef.classList.remove("hide");
-}
+};
 
+//Enable all buttons (For New Game and Restart)
+const enableButtons = () => {
+    btnRef.forEach((element)) => {
+        element.innerText = "";
+        element.disabled = "false";            
+    };
+
+    //disable popup
+    popupRef.classList.add("hide");
+};
 
 //This function is executed when a player wins
 const winFunction = (letter) => {
@@ -70,7 +80,8 @@ btnRef.forEach((element) => {
         //Increment count on each click
         count += 1;
         if(count === 9){
-            //It's a draw since there are a total of 9 boxed
+        
+        //It's a draw since there are a total of 9 boxed
 
         }
         //Check for win on every click
