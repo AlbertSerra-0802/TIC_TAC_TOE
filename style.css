@@ -1,8 +1,8 @@
-*{
-padding:0;
-margin: 0;
-box-sizing:border-box;
-font-family:"Raleway", sans-serif;
+.tauler {
+    display: grid;
+    gap: 5px;
+    width: max-content;
+    margin: 20px;
 }
 
 body {
