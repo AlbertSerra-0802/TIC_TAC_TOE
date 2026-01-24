@@ -1,21 +1,27 @@
-.tauler {
+body {
+font-family: Arial, sans-serif;
+text-align: center;
+}
+
+.table {
     display: grid;
     gap: 5px;
+    justify-content: center;
     width: max-content;
-    margin: 20px;
+    margin: auto;
+    grid-template-columns: repeat(3, 100px);
 }
 
 
-.container{
-    width: 50px;
-    height: 50px;
-    background-color: azure;
-    border-color: blueviolet;
-    font-size: 48px;
+.container {
+    display: flex;
     align-items: center;
     justify-content: center;
-    display: flex;
-
+    width: 100px;
+    height: 100px;
+    background-color: rgb(254, 246, 23);
+    font-size: 60px;
+    cursor: pointer;
 }
 
 
@@ -24,4 +30,12 @@ body {
 height: 100vh;
 background: #05ed0d;
 }
+
+.button{
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+
 
