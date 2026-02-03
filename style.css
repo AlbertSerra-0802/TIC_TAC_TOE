@@ -1,5 +1,8 @@
 body {
+height: 100vh;
+background: #0026cd;
 font-family: Arial, sans-serif;
+color: aliceblue;
 text-align: center;
 }
 
@@ -19,16 +22,19 @@ text-align: center;
     justify-content: center;
     width: 100px;
     height: 100px;
-    background-color: rgb(254, 246, 23);
+    background-color: rgb(0, 0, 0);
     font-size: 60px;
     cursor: pointer;
 }
 
-
-
-body {
-height: 100vh;
-background: #05ed0d;
+#winning-line {
+position: absolute;
+width: 300px;
+height: 5px;
+background: red;
+top: 50%;
+left: 0;
+display: none;
 }
 
 .button{
