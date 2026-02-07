@@ -1,14 +1,24 @@
+//Select all the boxes on the board (divs with "container" class) and save them on a list
 const containers = document.querySelectorAll(".container");
+
+// Select the item that will display messages (winner, tie, etc.)
 const message = document.getElementById("message");
+
+// Select the button to restart the game
 const restartBtn = document.getElementById("restart");
+
+// Select the item that will display the X point counter
 const scoreX = document.getElementById("scoreX");
+
+// Select the item that will display the O points counter
 const scoreO = document.getElementById("scoreO");
 
 
-// X start
+// X start and the begin of the game
 let torn = "❌"; 
 let puntsX = 0;
 let puntsO = 0;
+
 
 // We add click on each box
 containers.forEach(container => {
@@ -40,6 +50,7 @@ function Winner() {
         ) {
             hasWinner = true;
 
+
             // Messages with emojis, points and animations
             if (containers[a].textContent === "❌") {
                 message.textContent = "🕶️ ❌ Win!! 🤘  ⭕ Lost!! 💩";
@@ -49,10 +60,12 @@ function Winner() {
                 puntsO++;
             }
 
+
             // Update the comunters
             scoreX.textContent = puntsX;
             scoreO.textContent = puntsO;
 
+            
             // Animated winning boxes
             containers[a].classList.add("win");
             containers[b].classList.add("win");
