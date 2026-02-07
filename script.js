@@ -1,37 +1,43 @@
-//Select all the boxes on the board (divs with "container" class) and save them on a list
+// Select elements
 const containers = document.querySelectorAll(".container");
-
-// Select the item that will display messages (winner, tie, etc.)
 const message = document.getElementById("message");
-
-// Select the button to restart the game
 const restartBtn = document.getElementById("restart");
-
-// Select the item that will display the X point counter
 const scoreX = document.getElementById("scoreX");
-
-// Select the item that will display the O points counter
 const scoreO = document.getElementById("scoreO");
 
+// Initial player selection elements
+const startX = document.getElementById("startX");
+const startO = document.getElementById("startO");
+const playerSelect = document.getElementById("player-select");
 
-// X start and the begin of the game
-let torn = "❌"; 
+// Game variables
+let torn = "❌"; // starting player
 let puntsX = 0;
 let puntsO = 0;
 
+// Choose starting player
+startX.addEventListener("click", () => {
+    torn = "❌";
+    playerSelect.style.display = "none"; // hide selection menu
+});
 
-// We add click on each box
+startO.addEventListener("click", () => {
+    torn = "⭕";
+    playerSelect.style.display = "none";
+});
+
+// Add click event to each cell
 containers.forEach(container => {
     container.addEventListener("click", () => {
         if (container.textContent.trim() === "") {
             container.textContent = torn;
             Winner();
-            torn = (torn === "❌") ? "⭕" : "❌";
+            torn = (torn === "❌") ? "⭕" : "❌"; // change turn
         }
     });
 });
 
-// Check if there is a winner or tie
+// Function to check winner or tie
 function Winner() {
     const combinations = [
         [0,1,2], [3,4,5], [6,7,8],
@@ -50,8 +56,7 @@ function Winner() {
         ) {
             hasWinner = true;
 
-
-            // Messages with emojis, points and animations
+            // Winner message and score update
             if (containers[a].textContent === "❌") {
                 message.textContent = "🕶️ ❌ Win!! 🤘  ⭕ Lost!! 💩";
                 puntsX++;
@@ -60,44 +65,52 @@ function Winner() {
                 puntsO++;
             }
 
-
-            // Update the comunters
+            // Update score counters
             scoreX.textContent = puntsX;
             scoreO.textContent = puntsO;
 
-            
-            // Animated winning boxes
+            // Highlight winning cells
             containers[a].classList.add("win");
             containers[b].classList.add("win");
             containers[c].classList.add("win");
 
-            
-            // Close the game
-            offGame(); 
-            return;
+            offGame(); // disable board
+            break;
         }
-    };
+    }
 
-    // Check if there is a tie
+    // Check tie
     const full = Array.from(containers).every(container => container.textContent !== "");
     if (full && !hasWinner) {
-        message.textContent = "🤜🤛 Empat!";
+        message.textContent = "🤜🤛 Tie!";
     }
 }
 
-// Function to restart the game
+// Restart game function
 function restartGame() {
     containers.forEach(container => {
         container.textContent = "";
-        container.classList.remove("win"); 
+        container.classList.remove("win"); // remove highlight
     });
     message.textContent = "";
     torn = "❌";
-    onGame(); 
+    onGame(); // enable board
+    playerSelect.style.display = "block"; // show player selection again
 }
 
-// Listen to the button "Click"
+// Restart button event
 restartBtn.addEventListener("click", restartGame);
 
+// Disable board function
+function offGame() {
+    containers.forEach(container => {
+        container.style.pointerEvents = "none";
+    });
+}
 
-
+// Enable board function
+function onGame() {
+    containers.forEach(container => {
+        container.style.pointerEvents = "auto";
+    });
+}
