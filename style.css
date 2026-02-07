@@ -1,6 +1,6 @@
 body {
 height: 100vh;
-background: #0026cd;
+background: #4fcdd8;
 font-family: Arial, sans-serif;
 color: aliceblue;
 text-align: center;
@@ -37,11 +37,22 @@ left: 0;
 display: none;
 }
 
-.button{
-    padding: 10px 20px;
-    font-size: 16px;
-    margin-top: 10px;
+#message{
+    font-size: 30px;
+
+
 }
 
+#score {
+    margin-top: 10px;
+    font-size: 30px;
+}
 
+.restart{
+    padding: 10px 20px;
+    font-size: 20px;
+    margin-top: 30px auto 0;
+    display: block;
+    cursor: pointer; 
+}
 
