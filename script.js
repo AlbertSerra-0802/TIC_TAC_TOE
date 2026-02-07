@@ -11,14 +11,16 @@ const startO = document.getElementById("startO");
 const playerSelect = document.getElementById("player-select");
 
 // Game variables
-let torn = "❌"; // starting player
+let torn = "❌"; 
 let puntsX = 0;
 let puntsO = 0;
 
 // Choose starting player
 startX.addEventListener("click", () => {
     torn = "❌";
-    playerSelect.style.display = "none"; // hide selection menu
+
+    // Hide selection menu
+    playerSelect.style.display = "none"; 
 });
 
 startO.addEventListener("click", () => {
@@ -32,7 +34,9 @@ containers.forEach(container => {
         if (container.textContent.trim() === "") {
             container.textContent = torn;
             Winner();
-            torn = (torn === "❌") ? "⭕" : "❌"; // change turn
+
+            //Change turn
+            torn = (torn === "❌") ? "⭕" : "❌"; 
         }
     });
 });
@@ -74,7 +78,8 @@ function Winner() {
             containers[b].classList.add("win");
             containers[c].classList.add("win");
 
-            offGame(); // disable board
+             // Disable board
+            offGame();
             break;
         }
     }
@@ -90,12 +95,16 @@ function Winner() {
 function restartGame() {
     containers.forEach(container => {
         container.textContent = "";
-        container.classList.remove("win"); // remove highlight
+        container.classList.remove("win"); 
     });
     message.textContent = "";
     torn = "❌";
-    onGame(); // enable board
-    playerSelect.style.display = "block"; // show player selection again
+
+    // enable board
+    onGame(); 
+
+    // show player selection again
+    playerSelect.style.display = "block"; 
 }
 
 // Restart button event
